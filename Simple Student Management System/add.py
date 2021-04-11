@@ -10,7 +10,7 @@ class Add:
         self.root.title('Add Student')
         self.root.geometry('450x575')
         self.root.resizable(width=False, height=False)
-        self.root.configure(background ='#FFFFFF')
+        self.root.configure(background='#FFFFFF')
         
         self.fields = ('id', 'name', 'gender', 'course', 'year', 'birthdate', 'contact', 'address')
         self.database = connect('data/students.csv', self.fields, 'id')
