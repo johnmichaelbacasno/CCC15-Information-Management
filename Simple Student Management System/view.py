@@ -10,7 +10,7 @@ class View:
         self.root.title('Student Profile')
         self.root.geometry('450x575')
         self.root.resizable(width=False, height=False)
-        self.root.configure(background ='#FFFFFF')
+        self.root.configure(background='#FFFFFF')
         
         self.key = key
         self.fields = ('id', 'name', 'gender', 'course', 'year', 'birthdate', 'contact', 'address')
