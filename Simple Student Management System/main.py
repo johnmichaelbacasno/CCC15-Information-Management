@@ -12,7 +12,7 @@ class Main:
         self.root.title('Student Management System')
         self.root.geometry('875x575')
         self.root.resizable(width=False, height=False)
-        self.root.configure(background = '#FFFFFF')
+        self.root.configure(background='#FFFFFF')
               
         self.fields = ('id', 'name', 'gender', 'course', 'year', 'birthdate', 'contact', 'address')
         self.image_student_male = ImageTk.PhotoImage(Image.open('res/student_male_icon_small.png'))
