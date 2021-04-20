@@ -84,13 +84,13 @@ class Main:
                 
         self.search_all()
 
-    def show_rows(self, results):
+    def show_rows(self):
         self.start = (self.entry_number - 1) * 5       
         self.table_rows.forget()
         self.table_rows = tk.Frame(self.frame_table)
         self.table_rows.pack(fill='x')
         
-        for row, key in enumerate(results[self.start:self.start+5]):
+        for row, key in enumerate(self.results[self.start:self.start+5]):
             self.name = self.database.search(key, attr='name')
             self.course = self.database.search(key, attr='course')
             self.gender = self.database.search(key, attr='gender')
@@ -147,7 +147,7 @@ class Main:
         self.results = self.database.keys()
         self.entry_count = math.ceil(len(self.database) / 5)
         self.entry_number = 1
-        self.show_rows(self.results)
+        self.show_rows()
         self.show_navigation()
     
     def search_id(self, key):
@@ -160,7 +160,7 @@ class Main:
             self.results = (key,)
             self.entry_count = 1
             self.entry_number = 1
-            self.show_rows(self.results)
+            self.show_rows()
             self.show_navigation()
     
     def delete(self, key):
@@ -172,13 +172,13 @@ class Main:
     def previous(self):
         if self.entry_number > 1:
             self.entry_number -= 1
-            self.show_rows(self.results)
+            self.show_rows()
             self.show_navigation()
             
     def next(self):
         if self.entry_number < self.entry_count:
             self.entry_number += 1
-            self.show_rows(self.results)
+            self.show_rows()
             self.show_navigation()
     
     def view(self, key):
